@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - NKT College</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    // Demo registration logic
+    function handleRegister(e) {
+        e.preventDefault();
+        const role = document.querySelector('input[name="role"]:checked').value;
+        const id = document.getElementById('reg-id').value.trim();
+        const pass = document.getElementById('reg-pass').value.trim();
+        const cpass = document.getElementById('reg-cpass').value.trim();
+        if (!id || !pass || !cpass) {
+            alert('Please fill all fields.');
+            return;
+        }
+        if (pass !== cpass) {
+            alert('Passwords do not match!');
+            return;
+        }
+        alert('Registered as ' + role + '\nID: ' + id + '\nPassword: ' + pass + '\n(For demo, use login page to sign in)');
+        window.location.href = 'login.html';
+    }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="https://img.icons8.com/ios-filled/100/00b4d8/add-user-group-man-man.png" alt="Logo" class="login-logo">
+            <h1>Register!</h1>
+            <p>Create your account</p>
+        </div>
+        <form class="login-form" onsubmit="handleRegister(event)">
+            <div class="role-switch">
+                <label><input type="radio" name="role" value="student" checked> Student</label>
+                <label><input type="radio" name="role" value="teacher"> Teacher</label>
+            </div>
+            <div class="input-group">
+                <span class="input-icon"><img src="https://img.icons8.com/ios-filled/24/00b4d8/id-verified.png"/></span>
+                <input id="reg-id" type="text" placeholder="Student/Teacher ID" required>
+            </div>
+            <div class="input-group">
+                <span class="input-icon"><img src="https://img.icons8.com/ios-filled/24/00b4d8/lock-2.png"/></span>
+                <input id="reg-pass" type="password" placeholder="Password" required>
+            </div>
+            <div class="input-group">
+                <span class="input-icon"><img src="https://img.icons8.com/ios-filled/24/00b4d8/lock-2.png"/></span>
+                <input id="reg-cpass" type="password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="btn login-btn">Register</button>
+        </form>
+        <div class="login-footer">
+            <a href="login.html">Already have an account? Login</a>
+        </div>
+        <div class="back-link">
+            <a href="#" style="color:#00b4d8;"><span style="font-size:1.2em;">&#8592;</span> Back to Select College</a>
+        </div>
+    </div>
+</body>
+</html>

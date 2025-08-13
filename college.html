@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select College - NKT College</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .theme-toggle {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.2rem;
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px #0001;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .theme-toggle.dark {
+        background: #222;
+    }
+    .theme-toggle img {
+        width: 24px;
+        height: 24px;
+    }
+    .college-select-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: var(--bg, #fff);
+        transition: background 0.3s;
+    }
+    .college-logo {
+        width: 90px;
+        margin-bottom: 1.5rem;
+    }
+    .college-select-box {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 2px 16px #00b4d822;
+        padding: 2.2rem 2rem 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: background 0.3s;
+    }
+    .college-select-box.dark {
+        background: #222;
+        color: #fff;
+    }
+    .college-select {
+        width: 220px;
+        padding: 0.8rem 1rem;
+        border-radius: 14px;
+        border: 1.5px solid #e0e0e0;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        background: #f8f9fa;
+        transition: background 0.3s, color 0.3s;
+    }
+    .college-select.dark {
+        background: #333;
+        color: #fff;
+        border: 1.5px solid #444;
+    }
+    .college-btn {
+        background: #00b4d8;
+        color: #fff;
+        border: none;
+        border-radius: 24px;
+        padding: 0.9rem 2.5rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        box-shadow: 0 2px 8px #0001;
+        transition: background 0.2s;
+    }
+    .college-btn:hover {
+        background: #0077b6;
+    }
+    @media (max-width: 500px) {
+        .college-select-box {
+            padding: 1.2rem 0.5rem 1rem 0.5rem;
+        }
+        .college-logo {
+            width: 60px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <img src="https://img.icons8.com/ios-filled/50/000000/sun--v1.png" id="theme-icon" alt="Theme">
+    </button>
+    <div class="college-select-container" id="college-bg">
+        <div class="college-select-box" id="college-box">
+            <img src="https://img.icons8.com/ios-filled/100/00b4d8/college.png" alt="Logo" class="college-logo">
+            <h1>Welcome!</h1>
+            <p>Please select your college!</p>
+            <select class="college-select" id="college-select">
+                <option value="NKT College">NKT College</option>
+            </select>
+            <button class="college-btn" onclick="window.location.href='login.html'">Proceed to Login</button>
+        </div>
+    </div>
+    <script>
+    // Theme toggle logic
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const collegeBox = document.getElementById('college-box');
+    const collegeBg = document.getElementById('college-bg');
+    let dark = false;
+    themeBtn.onclick = () => {
+        dark = !dark;
+        if (dark) {
+            document.body.style.background = '#181a1b';
+            collegeBg.style.background = '#181a1b';
+            collegeBox.classList.add('dark');
+            themeBtn.classList.add('dark');
+            themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
+        } else {
+            document.body.style.background = '#fff';
+            collegeBg.style.background = '#fff';
+            collegeBox.classList.remove('dark');
+            themeBtn.classList.remove('dark');
+            themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun--v1.png';
+        }
+    };
+    </script>
+</body>
+</html>

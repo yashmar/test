@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NKT College - Main Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="appbar">
+            <span class="app-title">NKT College</span>
+            <span class="appbar-icons">
+                <button onclick="window.location.href='login.html'" class="btn" style="background:#0096c7;padding:0.5rem 1.2rem;font-size:1rem;">Logout</button>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme" style="margin-left:1rem;">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/sun--v1.png" id="theme-icon" alt="Theme">
+                </button>
+            </span>
+        </div>
+    </header>
+    <script>
+    // Theme toggle logic for main menu
+    window.addEventListener('DOMContentLoaded', function() {
+        const themeBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const mainBox = document.querySelector('main');
+        let dark = false;
+        themeBtn.onclick = () => {
+            dark = !dark;
+            if (dark) {
+                document.body.style.background = '#181a1b';
+                mainBox.style.background = '#222';
+                mainBox.style.color = '#fff';
+                themeBtn.classList.add('dark');
+                themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
+            } else {
+                document.body.style.background = '#fff';
+                mainBox.style.background = '';
+                mainBox.style.color = '';
+                themeBtn.classList.remove('dark');
+                themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun--v1.png';
+            }
+        };
+    });
+    </script>
+    <main>
+        <section class="profile-summary">
+            <div class="profile-pic"><img src="https://img.icons8.com/ios-filled/50/cccccc/user-male-circle.png" alt="Profile"></div>
+            <div class="profile-details">
+                <div class="profile-name">MARU YASH NAMIT JYOTI</div>
+                <div class="profile-id">20476</div>
+                <div class="profile-course">FYBSc (Artificial Intelligence & Machine Learning) NEP 2020</div>
+            </div>
+        </section>
+        <section class="summary-cards">
+            <div class="summary-card">
+                <div class="summary-title">Outstanding Amt</div>
+                <div class="summary-value" style="color:#ff6600;">No Outstanding</div>
+            </div>
+        </section>
+        <section class="menu-grid">
+            <a href="profile.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/user-male-circle.png" alt="Profile">
+                <span>Profile</span>
+            </a>
+            <a href="payments.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/graduation-cap.png" alt="Payments">
+                <span>Payments</span>
+            </a>
+            <a href="receipts.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/bill.png" alt="Receipts">
+                <span>Receipts</span>
+            </a>
+            <a href="examform.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/task.png" alt="Exam Form">
+                <span>Exam Form</span>
+            </a>
+            <a href="results.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/test-passed.png" alt="Results">
+                <span>Results</span>
+            </a>
+            <a href="hallticket.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/ticket.png" alt="Hall Ticket">
+                <span>Hall Ticket</span>
+            </a>
+            <a href="attendance.html" class="menu-card">
+                <img src="https://img.icons8.com/ios-filled/50/00b4d8/qr-code.png" alt="Attendance">
+                <span>Attendance</span>
+            </a>
+        </section>
+        <section class="news">
+            <div class="news-header">
+                <span>News & Notifications</span>
+                <a href="#" class="view-all">View all</a>
+            </div>
+            <div class="news-item">Welcome to WHIIZ! - Dear Student, We are thrilled to welcome you to WHIIZ!<br>Heres what you can expect from WHIIZ:<br><b>Seamless Experience:</b> Our user-friendly interface</div>
+        </section>
+    </main>
+</body>
+</html>
